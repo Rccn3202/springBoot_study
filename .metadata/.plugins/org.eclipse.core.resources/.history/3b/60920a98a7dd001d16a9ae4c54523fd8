@@ -1,0 +1,9 @@
+server.port=9000
+# h2 database //고칠 일 없음. 저장해두고 복붙해서 쓰기-구글에 h2 docs 검색해서 붙여넣기
+# h2는 테스트용이므로 따로 다운받지 않아도 됨. 바로 사용 가능
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+spring.datasource.url=jdbc:h2:~/local
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=

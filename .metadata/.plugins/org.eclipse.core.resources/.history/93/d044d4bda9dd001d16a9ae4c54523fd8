@@ -1,0 +1,14 @@
+
+
+
+server.port=9000
+# h2 database //\uACE0\uCE60 \uC77C \uC5C6\uC74C. \uC800\uC7A5\uD574\uB450\uACE0 \uBCF5\uBD99\uD574\uC11C \uC4F0\uAE30-\uAD6C\uAE00\uC5D0 h2 docs \uAC80\uC0C9\uD574\uC11C \uBD99\uC5EC\uB123\uAE30
+# h2\uB294 \uD14C\uC2A4\uD2B8\uC6A9\uC774\uBBC0\uB85C \uB530\uB85C \uB2E4\uC6B4\uBC1B\uC9C0 \uC54A\uC544\uB3C4 \uB428. \uBC14\uB85C \uC0AC\uC6A9 \uAC00\uB2A5
+
+#spring.h2.console.enabled=true
+spring.datasource.path=/h2-console
+spring.datasource.url=jdbc:h2:men:test
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
