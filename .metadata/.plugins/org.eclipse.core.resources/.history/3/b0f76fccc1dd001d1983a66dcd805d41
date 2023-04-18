@@ -31,11 +31,6 @@ class SbbApplicationTests {
 	void testJpa() {
 		List<Question> all = this.questionRepository.findAll();
 		System.out.println(all.get(0) + "test!!");
-		assertEquals(3, all.size()); //(기대값, 실제처리값)
-	}
-
-	private void assertEquals(int i, int size) {
-		// TODO Auto-generated method stub
 		
 	}
 
