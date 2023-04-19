@@ -1,5 +1,0 @@
-server.port=9000
-# h2 database //고칠 일 없음. 저장해두고 복붙해서 쓰기-h2 db 연결 검색
-spring.h2.console.enabled=true
-spring.h2.console.path=/h2-console
-spring.datasource.url=jdbc:h2:~/local

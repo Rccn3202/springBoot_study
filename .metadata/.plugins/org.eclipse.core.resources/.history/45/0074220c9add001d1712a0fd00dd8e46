@@ -1,0 +1,33 @@
+package com.mysite.sbb;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+
+@Data
+@RequiredArgsConstructor
+public class HelloLombok {
+
+	private String hello;
+	private int age;
+	
+	private final String hello1;
+	private final int age1;
+	
+	public static void main(String[] args) {
+//		HelloLombok helloLombok = new HelloLombok();
+//		helloLombok.setHello("헬로우");
+//		helloLombok.setAge(24);
+//		
+//		System.out.println(helloLombok.getHello());
+//		System.out.println(helloLombok.getAge());
+		
+		HelloLombok helloLombok1 = new HelloLombok("헬로우2", 30);
+		System.out.println(helloLombok1.getHello());
+		System.out.println(helloLombok1.getAge());		
+//		helloLombok1.setHello("헬로우");
+//		helloLombok1.setAge(24);  실행시 에러 발생 왜 final
+	}
+}
