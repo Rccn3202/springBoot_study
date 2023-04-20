@@ -5,22 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sbb 게시판</title>
+	<style>
+		table, th, td {
+			border:1px solid #000;
+		}
+	</style>
 </head>
 <body>
     <h2> 질문 게시판 </h2>
-    <table>
+    <table class="tableCss">
        <thead>
         <tr>
+			<th>게시글 번호</th>
             <th>제목</th>
-            <th>작성일시</th>
+            <th>내용</th>
+            <th>작성일</th>
         </tr>
        </thead>
-       <tbody>
-        <tr th:each="question : ${viewData}">
-            <td th:text="${question.subject}"></td>
-            <td th:text="${question.createDate}"></td>
-        </tr>
-    </tbody>
+        <tr th:each = "question : ${questionList}">
+			<td th:text="${question.id}"> </td> 
+            <td>
+				<a th:href="@{|/question/detail/${question.id}|}"  th:text="${question.subject}"> </a>
+			</td>
+            <td th:text="${question.content}"> </td>
+            <td th:text="${question.createDate}"> </td>
+         </tr>
     </table>
 </body>
 </html>

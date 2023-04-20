@@ -10,7 +10,12 @@ public class MainController {
 	@GetMapping("/sbb")
 	@ResponseBody
 	public String index() {
-		System.out.println("index console ~~~ ");
-		return "index browser~~~";
+		System.out.println("index console!!");
+		return "index browser!!";
+	}
+	
+	@GetMapping("/")
+	public String root() {
+		return "redirect:/question/list";
 	}
 }

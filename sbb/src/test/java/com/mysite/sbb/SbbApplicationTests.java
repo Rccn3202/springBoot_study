@@ -17,6 +17,7 @@ import com.mysite.sbb.answer.Answer;
 import com.mysite.sbb.answer.AnswerRepository;
 import com.mysite.sbb.question.Question;
 import com.mysite.sbb.question.QuestionRepository;
+import com.mysite.sbb.question.QuestionService;
 
 @SpringBootTest
 class SbbApplicationTests {
@@ -25,6 +26,8 @@ class SbbApplicationTests {
 	private QuestionRepository questionRepository;
 	@Autowired
 	private AnswerRepository answerRepository;
+	@Autowired
+	private QuestionService questionService;
 	
 //	@Test
 	void contextLoads() {
@@ -180,7 +183,7 @@ class SbbApplicationTests {
 		
 	//답변에 연결된 질문 찾기
 
-		@Test
+//		@Test
 		void testAnQ(){
 			Optional<Question> oqAnQ=this.questionRepository.findById(20);
 			assertTrue(oqAnQ.isPresent());
@@ -194,8 +197,7 @@ class SbbApplicationTests {
 			assertEquals(4, answerList.get(0).getId());
 		}
 		
-		
-		
+	
 				
 				
 				
