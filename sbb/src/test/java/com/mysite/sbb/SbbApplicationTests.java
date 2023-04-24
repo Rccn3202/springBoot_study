@@ -28,6 +28,15 @@ class SbbApplicationTests {
 	private AnswerRepository answerRepository;
 	@Autowired
 	private QuestionService questionService;
+	@Test
+	void testPagingJpa() {
+		for(int i=1; i<=143 ; i++) {
+			String subject=String.format("페이징 테이스 데이터:[%03d]", i);
+			String content="null";
+			this.questionService.create(subject, content);
+					
+		}
+	}
 	
 //	@Test
 	void contextLoads() {
@@ -68,18 +77,18 @@ class SbbApplicationTests {
 	
 	
 //@Test
-	void testJpaFindByContentAndSubject() {
-		Question fcs = this.questionRepository.findByContentAndSubject("스프링부트 JPA사용법","JPA 추상메소드 만들기");
-		assertEquals(22, fcs.getId());
-	}
+//	void testJpaFindByContentAndSubject() {
+//		Question fcs = this.questionRepository.findByContentAndSubject("스프링부트 JPA사용법","JPA 추상메소드 만들기");
+//		assertEquals(22, fcs.getId());
+//	}
 	
 //	@Test
-	void testJpaFindByCreateDateBetween() {
-		List<Question> f = this.questionRepository.findByCreateDateBetween(LocalDateTime.of(2023, 05,01,0,0), LocalDateTime.of(2023, 06,30,0,0));
-		System.out.println(f.get(0).getCreateDate());
-		System.out.println(f.get(1).getCreateDate());
-		assertEquals(2, f.size());
-	}
+//	void testJpaFindByCreateDateBetween() {
+//		List<Question> f = this.questionRepository.findByCreateDateBetween(LocalDateTime.of(2023, 05,01,0,0), LocalDateTime.of(2023, 06,30,0,0));
+//		System.out.println(f.get(0).getCreateDate());
+//		System.out.println(f.get(1).getCreateDate());
+//		assertEquals(2, f.size());
+//	}
 	
 //	@Test
 	void testJpaFindBySubjectLike() {
@@ -119,14 +128,14 @@ class SbbApplicationTests {
 //  4단계 delete 삭제하기
 //  5단계 테스팅 해보기 0개인가?
 //	@Test
-	void testfindBySubjectDelete() {
-		List<Question> q = this.questionRepository.findBySubject("수정된 제목"); //1단계 찾기
-		assertEquals(1, q.size() ); //2단계 테스팅 해보기 1개인가? 
-		System.out.println( q.get(0).getSubject()  + " : 찾은 레코드 내용 삭제할 예정" );  //   3단계 get 출력해주고
-    	this.questionRepository.delete(q.get(0)); //   4단계 delete 삭제하기
-   	q = this.questionRepository.findBySubject("수정된 제목"); //5단계 찾기
-		assertEquals(0, q.size() );// 0개인가?
-	}
+//	void testfindBySubjectDelete() {
+//		List<Question> q = this.questionRepository.findBySubject("수정된 제목"); //1단계 찾기
+//		assertEquals(1, q.size() ); //2단계 테스팅 해보기 1개인가? 
+//		System.out.println( q.get(0).getSubject()  + " : 찾은 레코드 내용 삭제할 예정" );  //   3단계 get 출력해주고
+//    	this.questionRepository.delete(q.get(0)); //   4단계 delete 삭제하기
+//   	q = this.questionRepository.findBySubject("수정된 제목"); //5단계 찾기
+//		assertEquals(0, q.size() );// 0개인가?
+//	}
 	
 	
 //	@Test
