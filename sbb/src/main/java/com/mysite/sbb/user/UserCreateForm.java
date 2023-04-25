@@ -1,0 +1,27 @@
+package com.mysite.sbb.user;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class UserCreateForm {
+	@Size(min=3,max=25)
+	@NotEmpty(message = "사용자 ID 필수")
+	private String username;
+	
+	@NotEmpty(message = "비밀번호 필수")
+	private String password1;
+	
+	@NotEmpty(message = "비밀번호 확인 필수")
+	private String password2;
+	
+	@NotEmpty(message = "비밀번호 필수")
+	@Email
+	private String email;
+
+}

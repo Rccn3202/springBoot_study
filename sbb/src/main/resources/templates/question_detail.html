@@ -1,7 +1,7 @@
 <html layout:decorate = "~{layout}">  <!-- ~{} 안에 부모가 되는 html 파일명을 써준다 -->
 
  <div layout:fragment="content">
-
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
    <div class="container my-3">
     <!-- 질문 -->
     <h2 class="border-bottom py-2" th:text="${question.subject}"></h2>
